@@ -12,11 +12,14 @@ fn fail_on_empty_directory(name: &str) {
 }
 
 fn build() {
-    // let dst = cmake::Config::new("").build_target("lbfgs").build();
-    let dst = cmake::Config::new("").build();
-
-    // fs::create_dir_all(dst.join("include")).unwrap();
-    // fs::copy("src/liblbfgs/include/lbfgs.h", dst.join("include/lbfgs.h")).unwrap();
+    let mut cfg = cmake::Config::new("");
+    if cfg!(target_os = "macos") {
+        let target_arch = std::env::var("CARGO_CFG_TARGET_ARCH").unwrap();
+        if target_arch == "x86_64" {
+            cfg.define("CMAKE_OSX_ARCHITECTURES", "x86_64");
+        }
+    }
+    let dst = cfg.build();
 
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
     println!("cargo:rustc-link-lib=static=lbfgs");
