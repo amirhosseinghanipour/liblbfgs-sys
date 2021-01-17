@@ -1,6 +1,6 @@
 [package]
 name = "liblbfgs-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Messense Lv <messense@icloud.com>"]
 description = "Low level Rust binding to libLBFGS"
 edition = "2018"
