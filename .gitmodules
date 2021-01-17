@@ -1,0 +1,3 @@
+[submodule "src/liblbfgs"]
+	path = src/liblbfgs
+	url = git@github.com:chokkan/liblbfgs.git
