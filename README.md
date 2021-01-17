@@ -4,7 +4,16 @@
 [![Crates.io](https://img.shields.io/crates/v/liblbfgs-sys.svg)](https://crates.io/crates/liblbfgs-sys)
 [![docs.rs](https://docs.rs/liblbfgs-sys/badge.svg)](https://docs.rs/liblbfgs-sys/)
 
-Low level Rust binding to libLBFGS: a library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS)
+Low level Rust binding to [libLBFGS](https://github.com/chokkan/liblbfgs): a library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS)
+
+## Installation
+
+Add it to your ``Cargo.toml``:
+
+```toml
+[dependencies]
+liblbfgs-sys = "0.1"
+```
 
 ## License
 
